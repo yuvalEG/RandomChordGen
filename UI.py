@@ -8,15 +8,14 @@ root.geometry("250x150")
 
 
 def run_program():
-    return chordGen.random_simple_chord()
+    label_text = chordGen.random_simple_chord()
+    output_label.config(text=label_text)
 
-
-label_text = run_program()
 
 # creating a button
-button = tk.Button(root, text="Run", command=run_program())
+button = tk.Button(root, text="Run", command=run_program)
 button.pack()
 
 # creating a chord label
-output_label = tk.Label(root, text=f'{label_text}')
+output_label = tk.Label(root, text="")
 output_label.pack()
