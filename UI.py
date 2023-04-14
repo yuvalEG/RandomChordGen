@@ -4,7 +4,7 @@ import chordGen
 # basic settings
 root = tk.Tk()
 root.title("Random Chord Generator")
-root.geometry("250x150")
+root.geometry("450x150")
 
 
 def run_program():
@@ -13,9 +13,9 @@ def run_program():
 
 
 # creating a button
-button = tk.Button(root, text="Run", command=run_program)
-button.pack()
+button = tk.Button(root, text="Run", font= 'Helvetica 20', command=run_program)
+button.pack(pady=5)
 
 # creating a chord label
-output_label = tk.Label(root, text="")
+output_label = tk.Label(root, text="", font='Arial 75')
 output_label.pack()
