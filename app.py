@@ -3,12 +3,13 @@ import random
 SimpleChordNames = ['A', 'Bb', 'B', 'C', 'C#', 'D', 'Eb', 'F', 'F#', 'G', 'Ab']
 SimpleChordTypes = ['Dim', 'm', '', '+', 'Dim7-', '7b5', 'm7', 'mMaj7', '7', 'Maj7']
 
+
 def print_random_simple_chord():
     random_simple_chord_number = random.randint(0, len(SimpleChordNames) - 1)
     random_simple_chord_type_number = random.randint(0, len(SimpleChordTypes) - 1)
     print(
       SimpleChordNames[random_simple_chord_number]
-        + SimpleChordTypes[random_simple_chord_type_number])
+      + SimpleChordTypes[random_simple_chord_type_number])
 
 
 # Building chord name basic blocks
@@ -43,14 +44,15 @@ Used_SeptaChordTypes = SeptaChordTypes
 
 
 def print_random_chord():
-    random_chord_number = random.randint(0, len(Used_ChordNames) - 1)
-    random_chord_type_number = random.randint(0, len(Used_ChordTypes) - 1)
-    random_septachord_name_number = random.randint(0, len(Used_SeptaChordTypes) - 1)
+    random_chord_name_selected = random.randint(0, len(Used_ChordNames) - 1)
+    random_chord_type_selected = random.randint(0, len(Used_ChordTypes) - 1)
+    random_septachord_name_selected = random.randint(0, len(Used_SeptaChordTypes) - 1)
 
     print(
-        Used_ChordNames[random_chord_number]
-        + Used_ChordTypes[random_chord_type_number]
-        + SeptaChordTypes[random_septachord_name_number])
+        Used_ChordNames[random_chord_name_selected]
+        + Used_ChordTypes[random_chord_type_selected]
+        + SeptaChordTypes[random_septachord_name_selected])
 
 
 print_random_simple_chord()
+print_random_chord()
