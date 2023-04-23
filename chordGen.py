@@ -43,50 +43,35 @@ def get_random_element(array):
     return array[selected_random_value]
 
 
-def build_chord(isSimple:bool, isSeventh:bool):
+def build_chord(is_simple: bool, is_seventh: bool):
     """
-    :param isSimple:
-    :param isSeventh:
-    :return: chord based on user preference
     IMPORTANT!
     Compares against values in SimpleChordTypes as string
     Do not change 'Dim' and 'm'
+    :param is_simple:
+    :param is_seventh:
+    :return: chord based on user preference
     """
 
-    chordName = ""
-    chordType = ""
-    chordSeventh = ""
+    chord_name = get_random_element(ChordNames)
+    chord_type = get_random_element(ChordTypes)
+    chord_seventh = ""
+# Only chord_seventh might be empty
 
-    if isSimple:
-        chordName = get_random_element(SimpleChordNames)
-        chordType = get_random_element(SimpleChordTypes)
+    if is_simple:
+        chord_name = get_random_element(SimpleChordNames)
+        chord_type = get_random_element(SimpleChordTypes)
 
-    else:
-        chordName = get_random_element(ChordNames)
-        chordType = get_random_element(ChordTypes)
-
-
-    if isSeventh and isSimple:
-        match chordType:
+    if is_seventh and is_simple:
+        match chord_type:
             case 'Dim':
-                chordSeventh = get_random_element(SimpleDimSeventh)
+                chord_seventh = get_random_element(SimpleDimSeventh)
             case 'm':
-                chordSeventh = get_random_element(SimpleMinorSeventh)
+                chord_seventh = get_random_element(SimpleMinorSeventh)
             case _:
-                chordSeventh = get_random_element(SimpleSeventhChordTypes)
+                chord_seventh = get_random_element(SimpleSeventhChordTypes)
 
+    if is_seventh and not is_simple:
+        chord_seventh = get_random_element(SeventhChordTypes)
 
-    if isSeventh and not isSimple:
-        chordSeventh = get_random_element(SeventhChordTypes)
-
-    return chordName+chordType+chordSeventh
-
-
-'''
-    if isSeventh:
-        if simplify_checker.get():
-            used_seventh_chords = chordGen.SimpleSeventhChordTypes
-        else:
-            used_seventh_chords = chordGen.SeventhChordTypes
-'''
-
+    return chord_name+chord_type+chord_seventh

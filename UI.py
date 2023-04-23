@@ -22,7 +22,7 @@ simplify_checkbox.pack(anchor='sw', padx=5)
 
 
 def run_program():
-    label_text = chordGen.build_chord(simplify_checker.get(), seventh_checker.get())
+    label_text = chordGen.build_chord(bool(simplify_checker.get()), bool(seventh_checker.get()))
     output_label.config(text=label_text)
 
 
