@@ -4,7 +4,7 @@ import chordGen
 # Basic settings
 root = tk.Tk()
 root.title("Random Chord Generator")
-root.geometry("450x175")
+root.geometry("450x185")
 
 # label to present the chord
 output_label = tk.Label(root, text="", font='Arial 75')
@@ -13,12 +13,12 @@ output_label.pack()
 # 'Use Seventh' checkbox
 seventh_checker = tk.IntVar()
 seventh_checkbox = tk.Checkbutton(root, text='Use Seventh Chords', variable=seventh_checker)
-seventh_checkbox.pack(anchor='center', padx= 5)
+seventh_checkbox.pack(anchor='sw', padx=5)
 
 # 'Simplify' checkbox
 simplify_checker = tk.IntVar()
 simplify_checkbox = tk.Checkbutton(root, text='Simplify Chords', variable=simplify_checker)
-simplify_checkbox.pack(anchor='center', padx= 5)
+simplify_checkbox.pack(anchor='sw', padx=5)
 
 
 def run_program():
