@@ -1,0 +1,7 @@
+(Install pyinstaller - pip install pyinstaller)
+
+Creating .exe + .app files:
+
+Cd to your RandomChordGenerator dir
+
+pyinstaller --onefile --windowed -i=/your_icon_dir.ico Random\ Chord\ Generator.py

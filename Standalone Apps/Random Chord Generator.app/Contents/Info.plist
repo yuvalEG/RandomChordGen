@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CFBundleDisplayName</key>
+	<string>Random Chord Generator</string>
+	<key>CFBundleExecutable</key>
+	<string>Random Chord Generator</string>
+	<key>CFBundleIconFile</key>
+	<string>generated-b457a4ea5c9c83b653fe1fae9e64c4746d74fb0aeb84d71d897cab2622bcb6b3.icns</string>
+	<key>CFBundleIdentifier</key>
+	<string>Random Chord Generator</string>
+	<key>CFBundleInfoDictionaryVersion</key>
+	<string>6.0</string>
+	<key>CFBundleName</key>
+	<string>Random Chord Generator</string>
+	<key>CFBundlePackageType</key>
+	<string>APPL</string>
+	<key>CFBundleShortVersionString</key>
+	<string>0.0.0</string>
+	<key>NSHighResolutionCapable</key>
+	<true/>
+</dict>
+</plist>
