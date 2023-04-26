@@ -3,7 +3,7 @@ import random
 # Building blocks of the most common chord notations
 SimpleChordNames = ['A', 'Bb', 'B', 'C', 'C#', 'D', 'Eb', 'F', 'F#', 'G', 'Ab']
 # TODO in case of change in SimpleChordTypes check function build_chord
-SimpleChordTypes = ['Dim', 'm', '']
+SimpleChordTypes = ['Dim', 'm', 'm', '', '']
 SimpleSeventhChordTypes = ['7b5', 'm7', '7', 'Maj7']
 SimpleDimSeventh = ['m7', '7']
 SimpleMinorSeventh = ['7b5', '7']
@@ -25,7 +25,7 @@ for ChordLetter in ChordLetters:
     for Accident in Accidentals:
         EnharmonicChord = ChordLetter + Accident
         # remove 4 secretly evil accidentals
-        if EnharmonicChord != 'B#' or 'Cb' or 'E#' or 'Fb':
+        if EnharmonicChord not in ['B#', 'Cb', 'E#', 'Fb']:
             ChordNames.append(EnharmonicChord)
 '''
 # Building a list with Double Accidentals
