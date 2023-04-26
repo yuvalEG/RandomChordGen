@@ -4,9 +4,9 @@ import random
 SimpleChordNames = ['A', 'Bb', 'B', 'C', 'C#', 'D', 'Eb', 'F', 'F#', 'G', 'Ab']
 # TODO in case of change in SimpleChordTypes check function build_chord
 SimpleChordTypes = ['Dim', 'm', 'm', '', '']
-SimpleSeventhChordTypes = ['7b5', 'm7', '7', 'Maj7']
-SimpleDimSeventh = ['m7', '7']
-SimpleMinorSeventh = ['7b5', '7']
+SimpleDimSevenths = ['7']
+SimpleMinorSevenths = ['7b5', '7']
+SimpleMajorSevenths = ['7', 'Maj7']
 
 # Building every possible chord name basic blocks
 ChordLetters = ['A', 'B', 'C', 'D', 'E', 'F', 'G']
@@ -15,11 +15,6 @@ Accidentals = ['', 'b', '#']
 ChordTypes = ['Dim', 'm', '', '+']
 SeventhChordTypes = ['7-', '7', 'Maj7']
 
-"""
-There should be another list with chords other than 7ths - 6, 9b, sus2, etc.
-Maybe even other basic chord types - like quartal
-"""
-
 ChordNames = []
 for ChordLetter in ChordLetters:
     for Accident in Accidentals:
@@ -27,15 +22,6 @@ for ChordLetter in ChordLetters:
         # remove 4 secretly evil accidentals
         if EnharmonicChord not in ['B#', 'Cb', 'E#', 'Fb']:
             ChordNames.append(EnharmonicChord)
-'''
-# Building a list with Double Accidentals
-EvilAccidentals = ['', 'b', 'bb', '#', '##']
-EvilEnharmonicChordNames = []
-for ChordLetter in ChordLetters:
-    for EvilAccident in EvilAccidentals:
-        EvilEnharmonicChord = ChordLetter + EvilAccident
-        EvilEnharmonicChordNames.append(EvilEnharmonicChord)
-'''
 
 
 def get_random_element(array):
@@ -47,7 +33,7 @@ def build_chord(is_simple: bool, is_seventh: bool):
     """
     IMPORTANT!
     Compares against values in SimpleChordTypes as string
-    Do not change 'Dim' and 'm'
+    Do not change strings in this list
     :param is_simple:
     :param is_seventh:
     :return: chord based on user preference
@@ -65,13 +51,13 @@ def build_chord(is_simple: bool, is_seventh: bool):
     if is_seventh and is_simple:
         match chord_type:
             case 'Dim':
-                chord_seventh = get_random_element(SimpleDimSeventh)
+                chord_seventh = get_random_element(SimpleDimSevenths)
             case 'm':
-                chord_seventh = get_random_element(SimpleMinorSeventh)
+                chord_seventh = get_random_element(SimpleMinorSevenths)
             case _:
-                chord_seventh = get_random_element(SimpleSeventhChordTypes)
+                chord_seventh = get_random_element(SimpleMajorSevenths)
 
     if is_seventh and not is_simple:
         chord_seventh = get_random_element(SeventhChordTypes)
 
-    return chord_name+chord_type+chord_seventh
+    return chord_name + chord_type + chord_seventh
