@@ -29,3 +29,7 @@ def run_program():
 # creating a 'Run' button
 button = tk.Button(root, text="Run", font='Helvetica 20', command=run_program)
 button.pack(pady=5)
+
+# Keyboard Shortcuts
+root.bind('<Return>', lambda event: run_program())
+root.bind('<space>', lambda event: run_program())
