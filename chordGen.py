@@ -3,7 +3,7 @@ import random
 # Building blocks of the most common chord notations
 SimpleChordNames = ['A', 'Bb', 'B', 'C', 'C#', 'D', 'Eb', 'F', 'F#', 'G', 'Ab']
 # TODO in case of change in SimpleChordTypes check function build_chord
-SimpleChordTypes = ['Dim', 'm', 'm', '', '']
+SimpleChordTypes = ['dim', 'm', 'm', '', '']
 SimpleDimSevenths = ['7']
 SimpleMinorSevenths = ['7b5', '7']
 SimpleMajorSevenths = ['7', 'Maj7']
@@ -12,7 +12,7 @@ SimpleMajorSevenths = ['7', 'Maj7']
 ChordLetters = ['A', 'B', 'C', 'D', 'E', 'F', 'G']
 Accidentals = ['', 'b', '#']
 # Building blocks of the  most common chord types
-ChordTypes = ['Dim', 'm', '', '+']
+ChordTypes = ['dim', 'm', '', '+']
 SeventhChordTypes = ['7-', '7', 'Maj7']
 
 ChordNames = []
@@ -50,7 +50,7 @@ def build_chord(is_simple: bool, is_seventh: bool):
 
     if is_seventh and is_simple:
         match chord_type:
-            case 'Dim':
+            case 'dim':
                 chord_seventh = get_random_element(SimpleDimSevenths)
             case 'm':
                 chord_seventh = get_random_element(SimpleMinorSevenths)
